@@ -8,7 +8,7 @@ FuPu is a browser game where players choose a weapon to alter the fate of the ch
 ## How to Play
 1. **Starting the Game:**
    - Load the game in a modern web browser.
-   - Choose your weapon from `toilet paper`, `eggs`, or `heart` by clicking on the respective images.
+   - Choose your weapon from `paper`, `eggs`, or `heart` by clicking on the respective images.
 2. **Game Controls:**
    - **Move:** Use arrow keys to navigate your player on the screen.
    - **Shoot:** Press the `Space` key to shoot the chosen weapon towards Putin.
