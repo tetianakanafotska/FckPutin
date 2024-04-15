@@ -3,7 +3,11 @@ window.addEventListener("load", () => {
   const eggs = document.getElementById("eggs");
   const heart = document.getElementById("heart");
   const restartButton = document.querySelectorAll("#restart-button");
+  const introSound = document.getElementById("intro-sound");
   const playButton = document.getElementById("play-sound");
+  const playImg = document.getElementById("play-img");
+  const weaponImgs = document.querySelectorAll("#weapon-images img");
+  const hoverSound = document.getElementById("hoverSound");
 
   let game;
   function startGame(weaponStr) {
@@ -50,6 +54,17 @@ window.addEventListener("load", () => {
     });
   });
   playButton.addEventListener("click", () => {
-    document.getElementById("intro-sound").play();
+    if (playImg.getAttribute("src") === "images/play.png") {
+      introSound.play();
+      playImg.setAttribute("src", "../images/pause.png");
+    } else {
+      introSound.pause();
+      playImg.setAttribute("src", "images/play.png");
+    }
+  });
+  weaponImgs.forEach((img) => {
+    img.addEventListener("mouseover", () => {
+      hoverSound.play();
+    });
   });
 });

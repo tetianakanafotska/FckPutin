@@ -28,11 +28,9 @@ class Putin {
   moveVertical() {
     this.animateIDVertical = setInterval(() => {
       this.top += Math.random() > 0.5 ? 160 : -160;
-      if (this.top < 30) {
-        console.log("this.top < 30");
+      if (this.top < 190) {
         this.element.style.top = `${this.top + 300}px`;
       } else if (this.top > window.innerHeight - 100) {
-        console.log("this.top > window.innerHeight-100");
         this.element.style.top = `${this.top - 400}px`;
       } else {
         this.element.style.top = `${this.top}px`;

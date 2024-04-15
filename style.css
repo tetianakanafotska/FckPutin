@@ -1,8 +1,3 @@
-@font-face {
-  font-family: Chalkduster;
-  src: url(fonts/Phosphate.ttc);
-}
-
 body {
   margin: 0;
 }
@@ -10,7 +5,7 @@ body {
 #play-sound-div {
   display: flex;
   justify-content: flex-end;
-  padding: 25px;
+  padding: 30px;
 }
 
 #play-sound {
@@ -24,15 +19,19 @@ body {
   background-size: cover;
 }
 
-#game-intro h1,
-h2 {
+#game-intro h2 {
+  margin-bottom: 0;
   color: white;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 #game-intro h1 {
+  margin-top: 0;
+  color: white;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: 3.1rem;
   text-shadow: 10px 5px 5px rgba(0, 0, 0, 0.372);
+  margin-bottom: 70px;
 }
 
 #choose-weapons {
@@ -48,7 +47,15 @@ h2 {
 }
 
 #weapon-images {
-  margin-top: 40px;
+  margin-top: 10px;
+}
+
+#weapon-images > * {
+  margin-left: 10px;
+}
+
+#weapon-images > *:hover {
+  mix-blend-mode: difference;
 }
 
 #game-end {
@@ -69,8 +76,9 @@ main {
   position: relative;
 }
 
-#game-end #player-lost {
+#player-lost {
   display: none;
+  background-color: black;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -78,8 +86,14 @@ main {
   width: 100vw;
 }
 
-#game-end #putin-converted {
+#player-lost h1,
+h2 {
+  color: white;
+}
+
+#putin-converted {
   display: none;
+  background-color: black;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -87,29 +101,71 @@ main {
   width: 100vw;
 }
 
-#game-end #putin-converted h1 {
+#putin-converted h1 {
   font-size: 3rem;
   color: white;
   margin-bottom: 0;
   text-shadow: 10px 5px 5px rgba(0, 0, 0, 0.372);
 }
+#putin-converted img {
+  animation: shake 1.5s;
+}
+@keyframes shake {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+  30% {
+    transform: translate(3px, 2px) rotate(0deg);
+  }
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+  90% {
+    transform: translate(1px, 2px) rotate(0deg);
+  }
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
 
-#game-end #putin-dead {
+#putin-dead {
   display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
   width: 100vw;
-  background-image: url(images/putin-dead2.png);
+  background-color: #323232;
+  background-image: url("images/putin-dead2.jpg");
   background-size: cover;
 }
 
-#game-end #putin-dead h1 {
+#putin-dead h1 {
   font-size: 3rem;
-  color: white;
+  color: rgb(255, 255, 255);
   margin-bottom: 0;
-  text-shadow: 10px 5px 5px rgba(0, 0, 0, 0.372);
+}
+
+#putin-dead h2 {
+  color: rgb(255, 255, 255);
 }
 
 .wrap {
@@ -120,3 +176,31 @@ main {
 }
 
 /* buttons */
+#restart-button {
+  border-radius: 15px;
+  border: none;
+  padding: 1rem 2rem;
+  margin: 50px 0;
+  background: #c93a02;
+  color: #ffffff;
+  font-family: sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: center;
+  transition: 250ms ease-in-out, transform 150ms ease;
+  appearance: none;
+}
+
+#restart-button:hover,
+#restart-button:focus {
+  background: #a53001;
+}
+
+#restart-button:focus {
+  outline: 1px solid #fff;
+  outline-offset: -4px;
+}
+
+#restart-button:active {
+  transform: scale(0.99);
+}

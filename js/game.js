@@ -10,6 +10,8 @@ class Game {
     this.touchSound = document.getElementById("touch-sound");
     this.natureSound = document.getElementById("nature-sound");
     this.hitSound = document.getElementById("hit-sound");
+    this.putinConvertedSound = document.getElementById("putin-converted-sound");
+    this.clapSound = document.getElementById("clapSound");
     this.putin = new Putin(this.gameContainer);
     this.player = new Player(this.gameContainer, weaponStr, this.putin);
     this.gameIsOver = false;
@@ -53,15 +55,15 @@ class Game {
         this.hitCounter++;
         this.weapons[i].element.remove();
         console.log(this.hitCounter);
-        // change Putin image when hit 10 times
         this.changePutinImage();
       }
     }
   }
 
   changePutinImage() {
+    // change Putin image when hit 10 times
     if (this.hitCounter === 10 && this.weaponStr === "heart") {
-      this.putin.element.src = "images/putin-rocket-red.png";
+      this.putin.element.src = "images/putin-rocket-heart-eyes.png";
     }
     if (this.hitCounter === 10 && this.weaponStr === "eggs") {
       this.putin.element.src = "images/putin-rocket-red.png";
@@ -99,6 +101,7 @@ class Game {
     this.gameContainer.style.display = "none";
     if (outcome === "putinConverted") {
       this.natureSound.pause();
+      this.putinConvertedSound.play();
       this.putinConverted.style.display = "flex";
     }
     if (outcome === "playerLost") {
@@ -107,6 +110,7 @@ class Game {
     }
     if (outcome === "putinDead") {
       this.natureSound.pause();
+      this.clapSound.play();
       this.putinDead.style.display = "flex";
     }
   }

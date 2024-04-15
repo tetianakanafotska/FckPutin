@@ -7,11 +7,10 @@ class Weapon {
     this.element.style.width = 40 + "px";
     this.element.style.position = "absolute";
     this.gameContainer.appendChild(this.element);
-    this.top = null;
+    this.top = this.player.top;
     this.left = this.player.left;
   }
   updatePosition() {
-    this.top = this.player.top;
     this.left += 15;
     this.element.style.top = `${this.top + 80}px`;
     this.element.style.left = `${this.left + 40}px`;
