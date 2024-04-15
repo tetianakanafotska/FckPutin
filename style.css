@@ -1,5 +1,38 @@
+@font-face {
+  font-family: Chalkduster;
+  src: url(fonts/Phosphate.ttc);
+}
+
+body {
+  margin: 0;
+}
+
+#play-sound-div {
+  display: flex;
+  justify-content: flex-end;
+  padding: 25px;
+}
+
+#play-sound {
+  background: none;
+  border: none;
+}
+
 #game-intro {
   display: block;
+  background-image: url("images/kremlin2\ 2.jpeg");
+  background-size: cover;
+}
+
+#game-intro h1,
+h2 {
+  color: white;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+#game-intro h1 {
+  font-size: 3.1rem;
+  text-shadow: 10px 5px 5px rgba(0, 0, 0, 0.372);
 }
 
 #choose-weapons {
@@ -14,19 +47,76 @@
   margin: 0 0 30px 0;
 }
 
+#weapon-images {
+  margin-top: 40px;
+}
+
 #game-end {
-  display: none;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
 }
 
 #game-container {
+  display: none;
   width: 100vw;
   height: 100vh;
+  background-image: url("images/gameBCK.jpeg");
+  background-size: cover;
 }
 
 main {
   position: relative;
 }
+
+#game-end #player-lost {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+#game-end #putin-converted {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+#game-end #putin-converted h1 {
+  font-size: 3rem;
+  color: white;
+  margin-bottom: 0;
+  text-shadow: 10px 5px 5px rgba(0, 0, 0, 0.372);
+}
+
+#game-end #putin-dead {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-image: url(images/putin-dead2.png);
+  background-size: cover;
+}
+
+#game-end #putin-dead h1 {
+  font-size: 3rem;
+  color: white;
+  margin-bottom: 0;
+  text-shadow: 10px 5px 5px rgba(0, 0, 0, 0.372);
+}
+
+.wrap {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* buttons */

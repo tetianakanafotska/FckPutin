@@ -2,10 +2,10 @@ window.addEventListener("load", () => {
   const toiletPaper = document.getElementById("toilet-paper");
   const eggs = document.getElementById("eggs");
   const heart = document.getElementById("heart");
-  const restartButton = document.getElementById("restart-button");
+  const restartButton = document.querySelectorAll("#restart-button");
+  const playButton = document.getElementById("play-sound");
 
   let game;
-
   function startGame(weaponStr) {
     game = new Game(weaponStr);
     game.start();
@@ -29,8 +29,9 @@ window.addEventListener("load", () => {
       }
       if (e.code === "Space") {
         e.preventDefault();
-        game.player.weapon.fired = true;
-        game.player.weapon.fire();
+        game.weapons.push(
+          new Weapon(game.gameContainer, weaponStr, game.player)
+        );
       }
     });
   }
@@ -42,5 +43,13 @@ window.addEventListener("load", () => {
   });
   heart.addEventListener("click", () => {
     startGame("heart");
+  });
+  restartButton.forEach((button) => {
+    button.addEventListener("click", () => {
+      location.reload();
+    });
+  });
+  playButton.addEventListener("click", () => {
+    document.getElementById("intro-sound").play();
   });
 });

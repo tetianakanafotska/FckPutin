@@ -9,39 +9,55 @@
   <body>
     <main>
       <div id="game-intro">
+        <div id="play-sound-div">
+          <button id="play-sound">
+            <img src="images/play.png" alt="play button" width="20" />
+          </button>
+        </div>
         <div id="choose-weapons">
-          <h2>Choose your weapon</h2>
-          <div>
+          <h1>WELCOME TO PUTIN LAND</h1>
+          <h2>CHOOSE YOUR WEAPON</h2>
+          <audio
+            id="intro-sound"
+            src="../sounds/intro-sound.mov"
+            loop
+            autoplay
+          ></audio>
+          <div id="weapon-images">
             <img
               id="toilet-paper"
               src="images/toiletPaper.png"
               alt="toilet paper"
-              width="100"
+              width="80"
             />
-            <img id="eggs" src="images/eggs.png" alt="eggs" width="100" />
-            <img id="heart" src="images/heart.png" alt="love" width="100" />
+            <img id="eggs" src="images/eggs.png" alt="eggs" width="80" />
+            <img id="heart" src="images/heart.png" alt="love" width="80" />
           </div>
         </div>
       </div>
-      <div id="game-container"></div>
+      <div id="game-container">
+        <audio id="touch-sound" src="../sounds/coughPutin.mp3"></audio>
+        <audio id="nature-sound" src="../sounds/nature-sound.mp3"></audio>
+        <audio id="hit-sound" src="../sounds/hitSound.mp3"></audio>
+      </div>
       <div id="game-end">
         <article id="putin-converted">
-          <h2>Well done!</h2>
-          <p>You successfully converted Putin</p>
+          <h1>Bravo!</h1>
+          <h2>You successfully converted Putin</h2>
           <img src="images/putin-lgbt.png" alt="putin-lgbt" width="400" />
-          <button>Restart</button>
+          <button class="button_slide" id="restart-button">Restart</button>
         </article>
         <article id="putin-dead">
-          <h2>Well done!</h2>
-          <p>Putin is done.</p>
-          <img src="images/putin-dead.jpg" alt="putin-dead" width="400" />
-          <button>Restart</button>
+          <h1>Well done!</h1>
+          <h2>Putin is gone.</h2>
+          <button class="button_slide" id="restart-button">Restart</button>
         </article>
         <article id="player-lost">
           <h2>Opps, you lost!</h2>
           <p>Try one more time!</p>
           <img src="images/player-lost.png" alt="putin-happy" width="400" />
-          <button id="restart-button">Restart</button>
+          <audio id="playerLost" src="../sounds/playerLost-sound.mp3"></audio>
+          <button class="button_slide" id="restart-button">Restart</button>
         </article>
       </div>
     </main>

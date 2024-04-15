@@ -1,11 +1,8 @@
 class Putin {
   constructor(gameContainer) {
     this.gameContainer = gameContainer;
-    this.left = this.gameContainer.offsetWidth - 150;
-    this.top = Math.floor(
-      Math.random() * (this.gameContainer.offsetHeight - 400) + 10
-    );
-    console.log("This top:", this.top);
+    this.left = window.innerWidth;
+    this.top = Math.floor(Math.random() * (window.innerHeight - 400) + 30);
     this.element = document.createElement("img");
     this.element.src = "images/putin-rocket.png";
     this.element.style.position = "absolute";
@@ -30,11 +27,16 @@ class Putin {
 
   moveVertical() {
     this.animateIDVertical = setInterval(() => {
-      this.top += Math.random() > 0.5 ? 20 : -20;
-      this.element.style.top = `${this.top}px`;
+      this.top += Math.random() > 0.5 ? 160 : -160;
+      if (this.top < 30) {
+        console.log("this.top < 30");
+        this.element.style.top = `${this.top + 300}px`;
+      } else if (this.top > window.innerHeight - 100) {
+        console.log("this.top > window.innerHeight-100");
+        this.element.style.top = `${this.top - 400}px`;
+      } else {
+        this.element.style.top = `${this.top}px`;
+      }
     }, 2000);
-    if (this.top < 10) {
-      this.top = 10;
-    }
   }
 }

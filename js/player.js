@@ -1,23 +1,45 @@
 class Player {
-  constructor(gameContainer, weapon) {
+  constructor(gameContainer, weaponStr, putin) {
     this.gameContainer = gameContainer;
     this.directionY = 0;
     this.directionX = 0;
     this.left = 10;
     this.top = 10;
-    this.weapon = new Weapon(this.gameContainer, weapon, this);
+    this.weaponStr = weaponStr;
     this.element = document.createElement("img");
     this.element.src = "images/player.png";
     this.element.style.position = "absolute";
-    this.element.style.zIndex = "-2";
     this.gameContainer.appendChild(this.element);
     this.animateId = null;
+    this.putin = putin;
+    this.touchSound = document.getElementById("touch-sound");
   }
   move() {
     this.top += this.directionY;
     this.left += this.directionX;
     this.updatePosition();
-    this.weapon.updatePosition();
+    this.meetPutin();
+    this.playerOFFBounds();
+  }
+  meetPutin() {
+    const playerCoordinates = this.element.getBoundingClientRect();
+    const putinCoordinates = this.putin.element.getBoundingClientRect();
+    if (
+      playerCoordinates.left < putinCoordinates.right + 20 &&
+      playerCoordinates.right > putinCoordinates.left + 20 &&
+      playerCoordinates.top < putinCoordinates.bottom + 20 &&
+      playerCoordinates.bottom > putinCoordinates.top + 20
+    ) {
+      this.touchSound.play();
+      console.log("touched");
+    }
+  }
+  updatePosition() {
+    this.element.style.top = `${this.top}px`;
+    this.element.style.left = `${this.left}px`;
+  }
+
+  playerOFFBounds() {
     if (this.top < 10) {
       this.top = 10;
     }
@@ -30,14 +52,5 @@ class Player {
     if (this.left > this.gameContainer.offsetWidth - 150) {
       this.left = this.gameContainer.offsetWidth - 150;
     }
-    //animate the move
-    this.animateId = window.requestAnimationFrame(() => {
-      this.move();
-    });
-  }
-
-  updatePosition() {
-    this.element.style.top = `${this.top}px`;
-    this.element.style.left = `${this.left}px`;
   }
 }
