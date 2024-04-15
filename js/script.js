@@ -54,12 +54,12 @@ window.addEventListener("load", () => {
     });
   });
   playButton.addEventListener("click", () => {
-    if (playImg.getAttribute("src") === "images/play.png") {
+    if (playImg.getAttribute("src") === "../images/play.png") {
       introSound.play();
       playImg.setAttribute("src", "../images/pause.png");
     } else {
       introSound.pause();
-      playImg.setAttribute("src", "images/play.png");
+      playImg.setAttribute("src", "../images/play.png");
     }
   });
   weaponImgs.forEach((img) => {
