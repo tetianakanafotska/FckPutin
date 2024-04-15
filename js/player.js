@@ -31,7 +31,6 @@ class Player {
       playerCoordinates.bottom > putinCoordinates.top + 20
     ) {
       this.touchSound.play();
-      console.log("touched");
     }
   }
   updatePosition() {

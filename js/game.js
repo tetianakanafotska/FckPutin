@@ -54,7 +54,6 @@ class Game {
         this.hitSound.play();
         this.hitCounter++;
         this.weapons[i].element.remove();
-        console.log(this.hitCounter);
         this.changePutinImage();
       }
     }
@@ -81,17 +80,14 @@ class Game {
     if (this.hitCounter === 20 && this.weaponStr === "eggs") {
       this.gameIsOver = true;
       this.endGame("putinDead");
-      console.log("putin dead wggs");
     }
     if (this.hitCounter === 20 && this.weaponStr === "toiletPaper") {
       this.gameIsOver = true;
       this.endGame("putinDead");
-      console.log("putin dead tiolet");
     }
     if (this.putin.left < 0) {
       this.gameIsOver = true;
       this.endGame("playerLost");
-      console.log(this.playerLost);
       this.playerLostSound.play();
     }
   }
