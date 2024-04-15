@@ -1,6 +1,6 @@
 # FuPu Game Documentation
 ## Overview
-FuPu is an engaging browser game where players choose a weapon to alter the fate of the character Putin. With a mix of strategy and quick reflexes, players aim to convert or defeat Putin using various weapons while navigating through different challenges.
+FuPu is a browser game where players choose a weapon to alter the fate of the character Putin. With a mix of strategy and quick reflexes, players aim to convert or defeat Putin using various weapons while navigating through different challenges.
 ## Features
 - **Dynamic Gameplay:** Control a player character with directional keys and shoot weapons with spacebar to impact the game's outcome.
 - **Multiple Outcomes:** Based on the player's actions and chosen weapon, the game can end in Putin being converted, defeated, or the player losing.
