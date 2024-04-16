@@ -13,6 +13,10 @@ body {
   border: none;
 }
 
+#play-img:hover {
+  mix-blend-mode: hard-light;
+}
+
 #game-intro {
   display: block;
   background-image: url("images/kremlin2\ 2.jpeg");
@@ -22,6 +26,7 @@ body {
 #game-intro h2 {
   margin-bottom: 0;
   color: white;
+  font-size: 1.3rem;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 

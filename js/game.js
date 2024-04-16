@@ -9,7 +9,7 @@ class Game {
     this.introSound = document.getElementById("intro-sound");
     this.touchSound = document.getElementById("touch-sound");
     this.natureSound = document.getElementById("nature-sound");
-    this.hitSound = document.getElementById("hit-sound");
+    //this.hitSound = document.getElementById("hit-sound");
     this.putinConvertedSound = document.getElementById("putin-converted-sound");
     this.clapSound = document.getElementById("clapSound");
     this.putin = new Putin(this.gameContainer);
@@ -51,7 +51,9 @@ class Game {
         weaponCoordinates.top < putinCoordinates.bottom + 50 &&
         weaponCoordinates.bottom > putinCoordinates.top + 50
       ) {
-        this.hitSound.play();
+        const hitSound = new Audio("../hitSound.mp3");
+        hitSound.play();
+        //this.hitSound.play();
         this.hitCounter++;
         this.weapons[i].element.remove();
         this.changePutinImage();
