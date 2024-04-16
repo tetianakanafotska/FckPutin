@@ -1,11 +1,10 @@
 class Player {
-  constructor(gameContainer, weaponStr, putin) {
+  constructor(gameContainer, putin) {
     this.gameContainer = gameContainer;
     this.directionY = 0;
     this.directionX = 0;
     this.left = 10;
     this.top = 10;
-    this.weaponStr = weaponStr;
     this.element = document.createElement("img");
     this.element.src = "images/player.png";
     this.element.style.position = "absolute";

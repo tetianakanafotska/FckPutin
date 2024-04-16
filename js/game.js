@@ -13,7 +13,7 @@ class Game {
     this.putinConvertedSound = document.getElementById("putin-converted-sound");
     this.clapSound = document.getElementById("clapSound");
     this.putin = new Putin(this.gameContainer);
-    this.player = new Player(this.gameContainer, weaponStr, this.putin);
+    this.player = new Player(this.gameContainer, this.putin);
     this.gameIsOver = false;
     this.weapons = [];
     this.hitCounter = 0;
